@@ -1,0 +1,19 @@
+<hr size="4px" noshade="">
+<%= if  Enum.count(@comments)!=0 do%>
+
+<h3>Comments:</h3>
+<div class="comments">
+    <!--<div class="comment header">
+        <div>Name</div>
+        <div>Content</div>
+    </div>-->
+<%= for comment <- @comments do%>
+    <div class="comment">
+        <div><b><%= comment.name%></b></div>
+        <div><%= comment.content %></div>
+    </div>
+<% end %>
+<br>
+</div>
+<hr size="4px" noshade="">
+<% end %>
