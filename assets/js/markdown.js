@@ -40,5 +40,7 @@ $(function(){
     
      if ($(".textarea").text() == "") {
          $(".textarea").text(defaultText).trigger("input")
+     }else{
+         $preview.append(marked($(".textarea").text()))
      }
 });

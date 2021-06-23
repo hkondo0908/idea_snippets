@@ -28,7 +28,11 @@
 </div>
 <div class="row">
   <%= label f, :published %>
-  <%= select f, :published,[:draft, :public, :limited, :private], value: :draft %>
+  <%= if Map.has_key?(@conn.assigns, :post) do %> 
+  <%= select f, :published,[:draft, :public, :limited, :private], selected: @post.published %>
+  <% else %>
+  <%= select f, :published,[:draft, :public, :limited, :private] , selected: :draft %> 
+  <% end %>
   <%= error_tag f, :published %>
 </div>
   <%= if @current_user do%>
